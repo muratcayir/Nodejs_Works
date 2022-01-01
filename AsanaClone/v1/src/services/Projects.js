@@ -2,14 +2,20 @@
 // hata varsa yönlendirme yapmak
 const Project = require("../models/Projects")
 
-const insert =(projectData)=>{
-    
-    const project =new Project(projectData)
+const insert =(data)=>{
+    const project =new Project(data)
     return project.save()
 }
 
-const list= ()=>{
-    return Project.find({})
+const list= (where)=>{
+    return Project.find(where || {}).populate({
+        path:"user_id",
+        select:"full_name email"
+    })
 }
 
-module.exports={insert,list}
+const modify = (data,id)=>{
+return Project.findByIdAndUpdate(id,data,{new:true})
+
+}
+module.exports={insert,list,modify}

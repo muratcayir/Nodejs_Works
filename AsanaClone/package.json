@@ -1,5 +1,5 @@
 {
-  "name": "kablosuzkedi",
+  "name": "asanaclone",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -18,7 +18,9 @@
     "joi": "^17.5.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.2",
+    "nodemailer": "^6.7.2",
     "nodemon": "^2.0.15",
+    "uuid": "^8.3.2",
     "winston": "^3.3.3"
   }
 }

@@ -9,13 +9,16 @@ const insert =(data)=>{
     return user.save()
 }
 
-const list= ()=>{
-  
-    return User.find({})
-}
-
 const loginUser =(loginData)=>{
   return User.findOne(loginData)
 }
 
-module.exports={insert,list,loginUser}
+const list= ()=>{
+    return User.find({})
+}
+
+const modify=(where,data)=>{
+return User.findOneAndUpdate(where,data,{new:true});
+}
+
+module.exports={insert,list,loginUser,modify}

@@ -1,2 +1,13 @@
 {"level":"info","message":{"_id":"617da42b12fc55d8a0f1c316","createdAt":"2021-10-30T19:59:39.157Z","name":"Murat","updatedAt":"2021-10-30T19:59:39.157Z"},"service":"project-service"}
 {"level":"info","message":{"_id":"617e4f75a65f1c7fffd5005a","createdAt":"2021-10-31T08:10:29.357Z","updatedAt":"2021-10-31T08:10:29.357Z"},"service":"project-service"}
+{"level":"info","message":{"_id":"61cf11fe3483fa941825f964","createdAt":"2021-12-31T14:21:50.453Z","name":"deneme 2","updatedAt":"2021-12-31T14:21:50.453Z"},"service":"project-service"}
+{"level":"info","message":{"_id":"61cf12113483fa941825f966","createdAt":"2021-12-31T14:22:09.413Z","name":"deneme 1","updatedAt":"2021-12-31T14:22:09.413Z"},"service":"project-service"}
+{"level":"info","message":{"_id":"61cf2137f335f3c4dde3a746","createdAt":"2021-12-31T15:26:47.433Z","name":"Deneme","updatedAt":"2021-12-31T15:26:47.433Z"},"service":"project-service"}
+{"level":"info","message":{"_id":"61cf2166e4ba9ef5e73f2f19","createdAt":"2021-12-31T15:27:34.639Z","name":"Deneme 23","updatedAt":"2021-12-31T15:27:34.639Z"},"service":"project-service"}
+{"level":"info","message":{"_id":"61cf21839cdd0c9f2414c372","createdAt":"2021-12-31T15:28:03.562Z","name":"Deneme 234","updatedAt":"2021-12-31T15:28:03.562Z"},"service":"project-service"}
+{"level":"info","message":{"_id":"61cf21d3123cd85d981e4a8b","createdAt":"2021-12-31T15:29:23.447Z","name":"Deneme 24","updatedAt":"2021-12-31T15:29:23.447Z"},"service":"project-service"}
+{"level":"info","message":{"_id":"61cf3b5741fb76b04c25c83a","createdAt":"2021-12-31T17:18:15.067Z","name":"Deneme 23","updatedAt":"2021-12-31T17:18:15.067Z"},"service":"project-service"}
+{"level":"info","message":{"_id":"61cf3b85ead68b01c6c080f0","createdAt":"2021-12-31T17:19:01.328Z","name":"Deneme 25","updatedAt":"2021-12-31T17:19:01.328Z"},"service":"project-service"}
+{"level":"info","message":{"_id":"61cf409596c4a234eb1fe6b9","createdAt":"2021-12-31T17:40:37.459Z","name":"Deneme","updatedAt":"2021-12-31T17:40:37.459Z"},"service":"project-service"}
+{"level":"info","message":{"_id":"61cf409c96c4a234eb1fe6bb","createdAt":"2021-12-31T17:40:44.153Z","name":"Deneme 1","updatedAt":"2021-12-31T17:40:44.153Z"},"service":"project-service"}
+{"level":"info","message":{"_id":"61cf4205bf3703da8145a94e","createdAt":"2021-12-31T17:46:45.943Z","name":"Deneme 1","updatedAt":"2021-12-31T17:46:45.943Z"},"service":"project-service"}
