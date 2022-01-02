@@ -1,6 +1,7 @@
-const { insert, list, loginUser, modify } = require("../services/Users");
+const { insert, list, loginUser, modify,remove} = require("../services/Users");
 const projectService = require("../services/Projects");
 const eventEmitter = require("../scripts/events/eventEmitter");
+const path =require("path")
 const httpStatus = require("http-status");
 const uuid = require("uuid");
 const {
@@ -11,7 +12,6 @@ const {
 
 const create = (req, res) => {
   req.body.password = passwordToHash(req.body.password);
-
   insert(req.body)
     .then((response) => {
       res.status(httpStatus.CREATED).send(response);
@@ -56,6 +56,7 @@ const index = (req, res) => {
 };
 
 const projectList = (req, res) => {
+    
   projectService
     .list({ user_id: req.user?._id })
     .then((projects) => {
@@ -107,4 +108,65 @@ const update = (req, res) => {
         .send({ error: "Güncelleme işlemi sırasında bir hata gerçekleşti..." })
     );
 };
-module.exports = { create, index, login, projectList, resetPassword ,update};
+
+const changePassword = (req, res) => {
+
+  req.body.password=passwordToHash(req.body.password)
+ 
+  modify({ _id: req.user?._id }, req.body)
+    .then((updatedUser) => {
+      res.status().send(updatedUser);
+    })
+    .catch(() =>
+      res
+        .status(httpStatus.INTERNAL_SERVER_ERROR)
+        .send({ error: "Güncelleme işlemi sırasında bir hata gerçekleşti..." })
+    );
+};
+
+const deleteUser =(req,res)=>{
+  if(!req.params?.id){
+    return res.status(httpStatus.BAD_REQUEST).send({
+      message:"ID Bilgisi Eksik."
+    })
+  }
+  
+  remove(req.params?.id)
+  .then((deletedItem)=>{
+    if(!deletedItem){
+      return res.status(httpStatus.NOT_FOUND).send({
+        message:"Kayıt bulunamadı."
+      })
+    }
+    return res.status(httpStatus.OK).send({
+      message:"Kayıt silinmiştir."
+    })
+  })
+  .catch((e)=>{
+    res.status(httpStatus.INTERNAL_SERVER_ERROR).send({error:"Silme işlemi sırasında bir hata  oluştu."})
+  })
+};
+
+const updateProfileImage =(req,res)=>{
+ //Resim Kontrolü 
+ console.log(req.files) 
+if(!req?.files?.profile_image)
+{
+  return res.status(httpStatus.BAD_REQUEST).send({error:"Bu işlemi yapamazsınız"})
+}
+//Upload İşlemi
+const extension = path.extname(req.files.profile_image.name);
+const fileName = `${req?.user?._id}${extension}`
+const folderPath = path.join(__dirname,"../","uploads/users",fileName)
+
+req.files.profile_image.mv(folderPath,function (err){
+  if(err) return res.status(httpStatus.INTERNAL_SERVER_ERROR).send({error:err})
+  modify({_id:req?.user?._id},{profile_image:fileName})
+  .then((updatedUser)=>{
+    res.status(httpStatus.OK).send(updatedUser)
+    
+  })
+  .catch((e)=>res.status(httpStatus.INTERNAL_SERVER_ERROR).send({error:"Upload başarılı fakat yükleme sırasında bir hata gerçekleşti"}))
+})
+}
+module.exports = { create, index, login, projectList, resetPassword ,update,deleteUser,changePassword,updateProfileImage};

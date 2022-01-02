@@ -11,3 +11,6 @@
 {"level":"info","message":{"_id":"61cf409596c4a234eb1fe6b9","createdAt":"2021-12-31T17:40:37.459Z","name":"Deneme","updatedAt":"2021-12-31T17:40:37.459Z"},"service":"project-service"}
 {"level":"info","message":{"_id":"61cf409c96c4a234eb1fe6bb","createdAt":"2021-12-31T17:40:44.153Z","name":"Deneme 1","updatedAt":"2021-12-31T17:40:44.153Z"},"service":"project-service"}
 {"level":"info","message":{"_id":"61cf4205bf3703da8145a94e","createdAt":"2021-12-31T17:46:45.943Z","name":"Deneme 1","updatedAt":"2021-12-31T17:46:45.943Z"},"service":"project-service"}
+{"level":"info","message":{"_id":"61d1700bafe837ada00a301f","createdAt":"2022-01-02T09:27:39.129Z","name":"Deneme 2","updatedAt":"2022-01-02T09:27:39.129Z"},"service":"project-service"}
+{"level":"info","message":{"_id":"61d17010afe837ada00a3021","createdAt":"2022-01-02T09:27:44.373Z","name":"Deneme 3","updatedAt":"2022-01-02T09:27:44.373Z"},"service":"project-service"}
+{"level":"info","message":{"_id":"61d1a3a3cbcebd71fc40e9bd","createdAt":"2022-01-02T13:07:47.292Z","name":"gokhan 3","updatedAt":"2022-01-02T13:07:47.292Z"},"service":"project-service"}

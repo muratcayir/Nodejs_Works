@@ -10,12 +10,15 @@ const insert =(data)=>{
 const list= (where)=>{
     return Project.find(where || {}).populate({
         path:"user_id",
-        select:"full_name email"
+        select:"full_name email profil_image"
     })
 }
 
 const modify = (data,id)=>{
 return Project.findByIdAndUpdate(id,data,{new:true})
-
 }
-module.exports={insert,list,modify}
+
+const remove = (id)=>{
+return Project.findByIdAndDelete(id)
+}
+module.exports={insert,list,modify,remove}
